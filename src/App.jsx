@@ -1299,7 +1299,7 @@ export default function SageApp() {
           <button className={`nbtn${tab==="path"?" active":""}`} onClick={() => setTab("path")}>The Garden Path</button>
           <button className={`nbtn${tab==="demo"?" active":""}`} onClick={() => setTab("demo")}>Try Demo</button>
         </div>
-      </nav>
+      <button className="nbtn" onClick={() => { window.location.href="mailto:brenda@brenda-brewer.com"; }}>Need extra help? Work With Us.</button></nav>
 
       {tab === "home" && <>
         <section className="hero">
