@@ -134,6 +134,40 @@ You walked this path. The path walked you back. Sage will take it from here.`,
     cx:280, cy:855, final:true },
 ];
 
+
+const PARABLES = {
+  knowing: [
+    "There is a teaching in the Brihadaranyaka Upanishad about a student who asks his teacher: how do I know that consciousness exists? The teacher lights a lamp. What do you see? Light, says the student. And what sees the light? The student is quiet for a long time. The thing that sees cannot be seen — but its existence is proven by the fact that seeing happens at all. You are the lamp that proves the light. The one you are looking for is looking by the same light.",
+    "In the court of Harun al-Rashid there was a musician who played only for himself, late at night, when the palace was quiet. One night a woman passing the courtyard stopped and listened without his knowing. When he finished she said: that is the most beautiful thing I have ever heard. He asked how she had found him. She said: I heard something that sounded like it wasn’t meant for anyone. Those are always the truest things. I followed it here.",
+    "Nasreddin once walked into the village square carrying a lantern in broad daylight. What are you looking for, Nasreddin? He said: myself. You won’t find yourself out here, they said. He said: I know. But I got tired of looking in the dark alone. I thought if I brought a light, someone might help me look.",
+    "In the Vedic tradition there is a teaching called Indra’s Net. An infinite net stretching in all directions. At every node where the threads cross, there hangs a jewel. Each jewel reflects every other jewel. When you polish one jewel — when you become more clearly yourself — every other jewel in the net reflects that clarification. The one you are looking for is already in the net. The question is only whether you have polished the surface enough to see it.",
+  ],
+  logic: [
+    "A fox once looked up at a cluster of grapes hanging high on a vine. He jumped. He could not reach them. He jumped again. Still too high. He walked away and told everyone he met: those grapes are sour. No one asked him how he knew. He had not tasted them. He had only failed to reach them. The conclusion arrived to protect him from the trying. It was not about the grapes at all.",
+    "A student came to a Zen master and said: I have decided that people cannot be trusted. The master poured him tea until the cup overflowed. The student cried out. The master said: you came here full. There is no room for anything new. The student asked: what do I do? The master said: first, notice that you are holding the cup.",
+    "A merchant’s cart lost a wheel on the same road three times in one year. He declared the road cursed and refused to travel it again. His competitor took the road every week without incident. The merchant grew poor waiting for a different road. The wheel had been loose all along. The road had nothing to do with it. We name the place where the pain happened. We do not always name the thing we carried there.",
+    "In the Arabian Nights there is a story of a young man who was told by his father: the sea is not for our family. We are not sea people. The young man believed this for forty years. When his father died he found in his belongings a captain’s log. His father had sailed every ocean before he was born. He had simply been afraid his son would love it more than he loved him.",
+  ],
+  patience: [
+    "Rumi tells of a chickpea boiling in a pot. It keeps trying to jump out. The cook keeps pushing it back down. Finally the chickpea cries out: why are you doing this to me? The cook says: I am not punishing you. I am making you into something that can nourish another person. The chickpea stops fighting the water. This is not a story about suffering. It is a story about what rushing costs.",
+    "In the Mahabharata, Yudhishthira walks toward heaven and refuses to hurry even when the others run ahead. One by one they fall. He continues at the same pace. When he arrives he is the only one who makes it. The gatekeeper says: speed was the test. You passed by ignoring it. Yudhishthira says: I was not ignoring it. I simply had nowhere to hurry to. I was already going where I was going.",
+    "A monk spent twenty years preparing his monastery for an important visitor. He swept the floors, arranged the flowers, perfected the tea ceremony. The visitor arrived on a day the monk had gone to market. A student received the guest. Afterward the visitor said: that was the finest reception I have ever received. The monk understood then that he had been preparing for a performance. The student had simply been present.",
+    "There is a Lakota teaching: the soul travels at the pace of a slow walk. When we move too fast, we arrive somewhere our soul has not yet reached. We stand in a place feeling nothing because we are not yet there. Slow down, the elders said, not because the destination is far. But so that you arrive whole.",
+  ],
+  mindful: [
+    "In the Chandogya Upanishad, a father tells his son: look at that river. Taste the water from the middle. Now taste from the edge. Is there a difference? No, says the son. The father says: you are like that water. Wherever you look from, you are the same one looking. That sameness — that is what you are. Tat tvam asi. That thou art.",
+    "A dervish was known for seeing into people. A merchant asked: how do you do it? The dervish said: I stopped wanting anything from them. The merchant said: but then what do you get? The dervish said: everything. When you want nothing, you can finally see what is actually there.",
+    "In a past life, the Bodhisattva was a gardener who had tended a garden for so long without flowers that he stopped looking up. One morning a student came running: the garden is full of blossoms. It had bloomed three days ago. He had walked past it every morning looking at the ground. The version of us that has stopped expecting anything is not always the best guide to what is already arriving.",
+    "A student asked: what is love? The master said: put down everything you know about it first. He put down the disappointments, the theories, the stories. When he had put down everything, he looked up. The master said: now. What do you notice? The student looked around as if seeing it for the first time. He said: it is very quiet in here. The master said: yes. That is where it lives.",
+  ],
+  blooming: [
+    "In the Arabian Nights there is a story of a prince who was told by a sorcerer that he could not claim his kingdom until he found a blue rose. He spent thirty years searching. On the last day of his life an old woman handed him a white rose and said: I have been offering you this since the beginning. He said: but it is not blue. She said: it never was. The sorcerer told you that so you would keep searching instead of ruling. The prince held the rose. It was exactly what he had needed all along.",
+    "The Vedic teachers spoke of something called the Self that was not built but revealed. Like a sculptor who does not create the figure but removes the stone around it. You did not grow what bloomed on this path. You removed what was covering it. This is the oldest definition of readiness: not the addition of something new, but the clearing away of what was never yours to carry.",
+    "Rumi writes: out beyond ideas of wrongdoing and rightdoing, there is a field. I’ll meet you there. That field is not a place. It is a state of being — what remains when you have set down the performance of yourself. The one you are looking for is not looking for your performance. They are looking for the one who shows up in that field. That person is already here. They are reading this.",
+    "The Mandukya Upanishad speaks of turiya — the fourth state, beyond waking, dreaming, and deep sleep. It is not a state you enter. It is the ground in which all other states arise. Before the first thought of love, before the first hope or fear — that ground was there. It is still there. It has never been absent. Blooming is not an arrival. It is a recognition of what was always already the case.",
+  ],
+};
+
 const PROFILES = [
   { id:1, name:"Sasha", age:31, location:"Brooklyn, NY", bio:"Fermentation nerd, rooftop gardener. Looking for someone who appreciates slowness as much as I do.", values:["Zero Waste","Patience","Activism"], emoji:"🌿", tier:"sage" },
   { id:2, name:"Oren", age:34, location:"Portland, OR", bio:"Chef and food justice organizer. I cook for large groups on Sundays. I believe in long tables and long conversations.", values:["Food Justice","Community","Depth"], emoji:"🍃", tier:"grove" },
@@ -272,7 +306,10 @@ h1.hero-h em{font-style:italic;color:#2D6640;}
 .gp-h1 em{font-style:italic;color:#2D6640;}
 .gp-sub{font-size:14px;line-height:1.9;color:#3A1A10;max-width:480px;margin-bottom:14px;font-weight:300;}
 .gp-phil{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:#2D6640;}
-.gp-walk-method{margin:24px 0;padding:20px 24px;border-left:3px solid rgba(210,120,110,.4);background:rgba(210,120,110,.06);border-radius:0 6px 6px 0;max-width:520px;}
+.gp-research{width:100%;padding:32px 36px;background:rgba(45,102,64,.05);border-left:3px solid #2D6640;border-radius:0 6px 6px 0;margin-bottom:20px;box-sizing:border-box;}
+.gp-research-text{font-size:16px;line-height:2;color:#3A1A10;font-family:'Nunito',sans-serif;font-weight:500;margin-bottom:16px;}
+.gp-research-attr{font-size:11px;letter-spacing:.08em;color:#2D6640;font-family:'Nunito',sans-serif;font-weight:700;margin-top:8px;margin-bottom:16px;}
+.gp-walk-method{width:100%;padding:20px 24px;border-left:3px solid rgba(210,120,110,.4);background:rgba(210,120,110,.06);border-radius:0 6px 6px 0;box-sizing:border-box;}
 .gp-walk-method-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#A0522D;font-family:'Nunito',sans-serif;font-weight:800;margin-bottom:10px;}
 .gp-walk-method-text{font-size:14px;line-height:1.88;color:#3A1A10;font-family:'Nunito',sans-serif;font-weight:500;}
 .gp-prog{display:flex;align-items:center;gap:16px;padding:24px 48px;}
@@ -855,12 +892,12 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
     await new Promise(r => setTimeout(r, 1200));
     try {
       const text = await callSage(
-        `You are the quiet, wise voice of Sage — a plant-based matchmaking platform built on intentional love. Someone answered this question:\n\n"${question}"\n\nTheir answer: "${answer}"\n\nWrite 2-3 sentences that reflect what they wrote back to them with warmth and depth. Not praise. Not analysis. Just witness what they said and offer one small thing they might not have noticed. Be specific to their actual words. No clichés. No "journey". Speak directly to them as "you".`,
+        `You are the voice of Sage — a plant-based matchmaking platform built on slowness and intention. Someone answered this question:\n\n"${question}"\n\nTheir answer: "${answer}"\n\nWrite 2-3 sentences that reflect what they wrote back to them with warmth and depth. Not praise. Not analysis. Just witness what they said and offer one small thing they might not have noticed. Be specific to their actual words. No clichés. No "journey". Speak directly to them as "you".`,
         300
       );
-      setNudges(n => ({...n, [i]: text || getFallbackNudge(i, answer)}));
+      setNudges(n => ({...n, [i]: text || (PARABLES[stone.id] && PARABLES[stone.id][i]) || getFallbackNudge(i, answer)}));
     } catch(e) {
-      setNudges(n => ({...n, [i]: getFallbackNudge(i, answer)}));
+      setNudges(n => ({...n, [i]: (PARABLES[stone.id] && PARABLES[stone.id][i]) || getFallbackNudge(i, answer)}));
     }
     setNudging(n => ({...n, [i]: false}));
   };
@@ -876,10 +913,10 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
 
     if (isDoubt) {
       const doubtResponses = [
-        `The doubt that just arrived is real. Sage isn't asking you to ignore it — it's asking you to look at it. That doubt was built from real experiences that hurt. But here's the logic: the fact that you can imagine what you want means someone who matches it is imaginable. You are not asking for something that doesn't exist in human form. You are asking for someone like you. And you exist.`,
-        `"How can you be sure?" is the most honest thing you could have written. Nobody can be certain. But consider this: every person who found someone real once sat exactly where you're sitting, asking exactly that question. The doubt isn't proof it won't happen. It's proof you've been disappointed before. Those are different things.`,
-        `That question — the one underneath your answer — is the reason the Garden Path exists. Not to convince you with arguments. But to create enough stillness that you can hear what you actually believe, underneath what disappointment has told you. You wouldn't be here if some part of you didn't think it was possible.`,
-        `Doubt is a form of caring. You doubt because it matters. If it didn't matter you wouldn't be asking. The question now isn't whether someone exists — it's whether you're willing to be findable when they come looking.`,
+        `A woman named Sara spent three years certain the fig tree in her yard was dead. She stopped watering it. One spring morning she found a single green shoot at the base. She had been wrong about the silence. Sage isn't asking you to ignore it — it's asking you to look at it. That doubt was built from real experiences that hurt. But here's the logic: the fact that you can imagine what you want means someone who matches it is imaginable. You are not asking for something that doesn't exist in human form. You are asking for someone like you. And you exist.`,
+        `A man named Joel deleted every dating app on a Tuesday in November. On Wednesday his neighbor knocked to borrow salt. They are married now. He tells this story and still shakes his head. thing you could have written. Nobody can be certain. But consider this: every person who found someone real once sat exactly where you're sitting, asking exactly that question. The doubt isn't proof it won't happen. It's proof you've been disappointed before. Those are different things.`,
+        `There is a kind of certainty that arrives after pain. It feels like wisdom. Sometimes it is. Sometimes it is just the scar tissue talking. Not to convince you with arguments. But to create enough stillness that you can hear what you actually believe, underneath what disappointment has told you. You wouldn't be here if some part of you didn't think it was possible.`,
+        `She had decided the door was locked. She had not tried the handle. You doubt because it matters. If it didn't matter you wouldn't be asking. The question now isn't whether someone exists — it's whether you're willing to be findable when they come looking.`,
       ];
       return doubtResponses[i % doubtResponses.length];
     }
@@ -888,8 +925,8 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
     const word = answer.trim().split(" ").slice(0,4).join(" ");
     const affirmResponses = [
       `"${word}..." — notice how quickly that came. The things that arrive without hesitation are usually the truest ones. Sit with why this one is so clear.`,
-      `What you love has its own kind of logic. "${word}" isn't random — it says something about how you move through the world. The right person will recognize it immediately.`,
-      `The fact that you answered "${word}" says something important — not what you do, but who you are when no one is asking you to be anything in particular.`,
+      `There is something that arrives before the words do. That is the thing arriving. It knows something the thinking mind is still catching up to. "${word}" isn't random — it says something about how you move through the world. The right person will recognize it immediately.`,
+      `A woman kept a journal for twenty years that no one read. When she finally showed it to someone, he said: this is exactly how I think. She had been writing to him all along without knowing it. The fact that you answered "${word}" says something important — not what you do, but who you are when no one is asking you to be anything in particular.`,
       `Something in "${word}" points toward what you actually need, not just what you think you want. Those two things are worth distinguishing before you meet someone.`,
     ];
     return affirmResponses[i % affirmResponses.length];
@@ -1107,6 +1144,13 @@ function GardenPathPage({ onEnterSage }) {
           <div className="eyebrow">The Garden Path</div>
           <h1 className="gp-h1">Five stones.<br/><em>No rushing.</em></h1>
           <p className="gp-sub">Tap each stone on the path to walk it. Complete all five and Sage begins working on your behalf. The path is always here to return to.</p>
+          <div className="gp-research">
+            <p className="gp-research-text">&ldquo;A psychologist spent 40 years studying over 3,000 couples. He could predict divorce with 94% accuracy by watching a couple interact for just a few minutes. What he was watching for had nothing to do with how compatible they were. It had everything to do with how well they knew themselves.&rdquo;</p>
+            <p className="gp-research-attr">&mdash; Dr. John Gottman, University of Washington</p>
+            <p className="gp-research-text" style={{marginTop:16}}>There is also a well-documented phenomenon called the bias blind spot &mdash; we are neurologically better at seeing self-delusion in others than in ourselves. We assume that because we have lived with ourselves for decades, we know ourselves.</p>
+            <p className="gp-research-text" style={{marginTop:12,fontWeight:700}}>Having a library card does not mean you have read the books.</p>
+            <p className="gp-research-text" style={{marginTop:12}}>The Garden Path is opening the books &mdash; and walking the stones with eyes wide open.</p>
+          </div>
           <div className="gp-walk-method">
             <div className="gp-walk-method-label">The Walking Method</div>
             <p className="gp-walk-method-text">You know how solutions arrive in the shower? Not when you're trying to solve something — but the moment you stop? Walking works the same way. When your body is moving and your mind has nothing to grip, something underneath the thinking mind gets a chance to surface. That's not magic. That's how insight actually works. The walk after each stone isn't optional — it's where the real answer arrives.</p>
