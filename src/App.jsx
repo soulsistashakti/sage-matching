@@ -1312,6 +1312,7 @@ export default function SageApp() {
             <div className="hero-cta">
               <button className="btn-fill" onClick={() => setTab("path")}>Begin the Garden Path</button>
               <button className="btn-ghost" onClick={() => setTab("demo")}>See the Demo</button>
+              <button className="btn-ghost" onClick={() => { window.location.href="mailto:brenda@brenda-brewer.com"; }}>Need extra help? Work With Us.</button>
             </div>
           </div>
           <div className="hero-float">
