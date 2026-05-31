@@ -1298,7 +1298,6 @@ export default function SageApp() {
           <button className={`nbtn${tab==="home"?" active":""}`} onClick={() => setTab("home")}>Overview</button>
           <button className={`nbtn${tab==="path"?" active":""}`} onClick={() => setTab("path")}>The Garden Path</button>
           <button className={`nbtn${tab==="demo"?" active":""}`} onClick={() => setTab("demo")}>Try Demo</button>
-          <button className="nbtn" onClick={() => { window.location.href="mailto:brenda@brenda-brewer.com"; }}>Need extra help? Work With Us.</button>
         </div>
       </nav>
 
@@ -1313,6 +1312,7 @@ export default function SageApp() {
             <div className="hero-cta">
               <button className="btn-fill" onClick={() => setTab("path")}>Begin the Garden Path</button>
               <button className="btn-ghost" onClick={() => setTab("demo")}>See the Demo</button>
+              <button className="btn-ghost" onClick={() => { window.location.href="mailto:brenda@brenda-brewer.com"; }}>Need extra help? Work With Us.</button>
             </div>
           </div>
           <div className="hero-float">
