@@ -877,7 +877,7 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
         "anthropic-dangerous-direct-browser-access": "true"
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
+        model: "claude-sonnet-4-5",
         max_tokens: maxTokens,
         messages: [{ role: "user", content: prompt }]
       })
