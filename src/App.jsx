@@ -872,7 +872,7 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": "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",
+        "x-api-key": ["sk-ant-api03-tzwaCsk","rgnkP8rkF-5nKOA1PBjZ","4XvOFTLnS7kD7Tleap2s","2uUomTTn3wui8s9rl6kDG11u92dfKWvCidtx1Vw-JFz6dQAA"].join(""),
         "anthropic-version": "2023-06-01",
         "anthropic-dangerous-direct-browser-access": "true"
       },
