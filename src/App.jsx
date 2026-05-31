@@ -872,7 +872,7 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": import.meta.env.VITE_ANTHROPIC_KEY,
+        "x-api-key": "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",
         "anthropic-version": "2023-06-01",
         "anthropic-dangerous-direct-browser-access": "true"
       },
