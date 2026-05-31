@@ -895,7 +895,29 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
       const previousAnswers = stone.koans.slice(0, i).map((k, idx) => responses[idx] ? `Q${idx+1}: "${k.q}"\nAnswer: "${responses[idx]}"` : null).filter(Boolean).join("\n\n");
       const context = previousAnswers ? `Here is everything this person has written so far on this stone:\n\n${previousAnswers}\n\nNow they just wrote:` : `Someone answered this question:`;
       const text = await callSage(
-        `You are the voice of Sage — a plant-based matchmaking platform built on slowness and intention. ${context}\n\n"${question}"\n\nTheir answer: "${answer}"\n\nTell them a tiny parable — 2-3 sentences. A real-feeling moment about a real-feeling person that mirrors something in what they wrote, informed by everything they have shared. No analysis. No advice. No "you". Just a small story that lands quietly and opens something. Like Khalil Gibran, not a life coach. End with a concrete image, not an abstract conclusion. The last sentence should feel like a door opening, not a lesson landing. Do not repeat the same metaphor, setting, or image used in any previous parable in this conversation. Each parable must draw from a completely different world — a different tradition, culture, landscape, or human situation. Even if the person mentions gardens, plants, or nature in their answers, find a different metaphor entirely. Draw from music, architecture, navigation, astronomy, cooking, language, mathematics, or any other human domain.`,
+        (() => {
+        const isLastQuestion = i === stone.koans.length - 1;
+        const isFinalStone = stone.final === true;
+        const stoneNum = stone.num || 1;
+        
+        let journeyInstruction = "";
+        if (i === 0) {
+          journeyInstruction = "This is the first question. Mirror the person closely — meet them where they are. Use imagery drawn from their own world and circumstances.";
+        } else if (i === 1 || i === 2) {
+          journeyInstruction = "Now expand outward. Leave the person's immediate circumstances behind and journey into an unexpected ancient wisdom tradition — Vedic, Sufi, Arabian Nights, Zen, Aesop, Mahabharata, Lakota, or another world tradition. Surprise them with a setting they would never have chosen for themselves. The surprise is part of the teaching.";
+        } else if (i === 3 && !isLastQuestion) {
+          journeyInstruction = "Cycle back toward the personal when the context resonates, but hold it in a larger frame now. The parable should feel like coming home to a house that has been rearranged while you were away.";
+        }
+        
+        let cliffhangerInstruction = "";
+        if (isLastQuestion && !isFinalStone) {
+          cliffhangerInstruction = "This is the final question of this stone. End your parable on a cliffhanger — an unanswered question, a door not yet opened, a figure walking toward something just out of frame. The very last sentence must be: 'Walk the next stone to find out.'";
+        } else if (isLastQuestion && isFinalStone) {
+          cliffhangerInstruction = "This is the final question of the final stone. End your parable with a sense of arrival and opening — something has shifted, a door stands open. The very last sentence must be: 'Enter Sage Matching.'";
+        }
+        
+        return `You are the voice of Sage — a plant-based matchmaking platform built on slowness and intention. ${context}\n\n"${question}"\n\nTheir answer: "${answer}"\n\n${journeyInstruction}\n\nTell them a tiny parable — 2-3 sentences. A real-feeling moment about a real-feeling person that mirrors something in what they wrote, informed by everything they have shared. No analysis. No advice. No "you". Just a small story that lands quietly and opens something. Like Khalil Gibran, not a life coach. End with a concrete image, not an abstract conclusion. Do not repeat the same metaphor, setting, or image used in any previous parable in this conversation. Each parable must evolve — always moving outward into new territory. ${cliffhangerInstruction}`;
+      })(),
         300
       );
       setNudges(n => ({...n, [i]: text || (PARABLES[stone.id] && PARABLES[stone.id][i]) || getFallbackNudge(i, answer)}));
