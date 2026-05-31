@@ -1,4 +1,10 @@
 import { useState, useEffect } from "react";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_KEY
+);
 
 const TIERS = [
   { id:"seed", symbol:"◌", name:"Seed", tagline:"Take root.", price:"Free", priceDetail:"Always free", color:"#A0522D",
@@ -866,6 +872,25 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
   const allAnswered = stone?.koans?.every((_, i) => (responses[i] || "").trim().length > 0);
 
   if (!stone) return null;
+
+  const saveProgress = async (email, stoneId, questionIndex, response, completed = false) => {
+    try {
+      let { data: user } = await supabase.from("users").select("id").eq("email", email).single();
+      if (!user) {
+        const { data: newUser } = await supabase.from("users").insert({ email }).select().single();
+        user = newUser;
+      }
+      await supabase.from("progress").upsert({
+        user_id: user.id,
+        stone_id: stoneId,
+        question_index: questionIndex,
+        response,
+        completed
+      }, { onConflict: "user_id,stone_id,question_index" });
+    } catch(e) {
+      console.error("Save progress error:", e);
+    }
+  };
 
   const callSage = async (prompt, maxTokens = 400) => {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
