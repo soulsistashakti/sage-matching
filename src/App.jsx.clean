@@ -888,11 +888,12 @@ function StoneDetail({ stone, isComplete, isUnlocked, onComplete, onClose, asShe
   const getNudge = async (i, question, answer) => {
     if (!answer.trim()) return;
     setNudging(n => ({...n, [i]: true}));
-    // Simulate thinking
     await new Promise(r => setTimeout(r, 1200));
     try {
+      const previousAnswers = stone.koans.slice(0, i).map((k, idx) => responses[idx] ? `Q${idx+1}: "${k.q}"\nAnswer: "${responses[idx]}"` : null).filter(Boolean).join("\n\n");
+      const context = previousAnswers ? `Here is everything this person has written so far on this stone:\n\n${previousAnswers}\n\nNow they just wrote:` : `Someone answered this question:`;
       const text = await callSage(
-        `You are the voice of Sage — a plant-based matchmaking platform built on slowness and intention. Someone answered this question:\n\n"${question}"\n\nTheir answer: "${answer}"\n\nWrite 2-3 sentences that reflect what they wrote back to them with warmth and depth. Not praise. Not analysis. Just witness what they said and offer one small thing they might not have noticed. Be specific to their actual words. No clichés. No "journey". Speak directly to them as "you".`,
+        `You are the voice of Sage — a plant-based matchmaking platform built on slowness and intention. ${context}\n\n"${question}"\n\nTheir answer: "${answer}"\n\nTell them a tiny parable — 2-3 sentences. A real-feeling moment about a real-feeling person that mirrors something in what they wrote, informed by everything they have shared. No analysis. No advice. No "you". Just a small story that lands quietly and opens something. Like Khalil Gibran, not a life coach.`,
         300
       );
       setNudges(n => ({...n, [i]: text || (PARABLES[stone.id] && PARABLES[stone.id][i]) || getFallbackNudge(i, answer)}));
